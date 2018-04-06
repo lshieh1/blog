@@ -19,10 +19,6 @@ class BlogController extends Controller
         return view('blogs', [
          'blogs' => $blogs
         ]);
-                // $blogs = Blog::all()
-                // return View::make('blogs.index')
-                //     ->('blogs', $blogs)
-
     }
 
     /**
@@ -68,7 +64,9 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view::make('blogs.show')
+            ->with('blog', $blog);
     }
 
     /**

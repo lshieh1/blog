@@ -5,22 +5,22 @@
 <div class="panel-body">
 	<br>
 	<br>
-	{{-- @include('common.errors') --}}
+	@include('common.errors')
 	
 	<form action="/blogs" method="POST" class="form-horizontal">
 			<!--csrf in here at some point -->
 			{{ csrf_field() }}
 		<div class="form-group">
-			<label for="task" class="col-sm-3 control-label">Blog</label>
+			<label for="task" class="col-sm-3 control-label">Create Blog</label>
 			<div class="col-sm-6">
-				<input type="text" name="name" id="blog-name" class="form-control">
+				<textarea type="text" name="name" id="blog-name" class="form-control"></textarea>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="col-sm-offset-3 col-sm-6">
 				<button type="submit" class="btn btn-default">
-					<i class="fa fa-plus">Add Blog</i> 
+					<button class="btn btn-primary"><i class="fa fa-plus">Add Blog</i></button>
 				</button>
 			</div>
 		</div>
@@ -31,7 +31,7 @@
 @if (count($blogs) > 0)
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				Current Tasks
+				Current Posts
 			</div>
 
 			<div class="panel-body">
@@ -39,7 +39,7 @@
 
 					<!-- Table Headings -->
 				<thead>
-					<th>Blog</th>
+					<th>Blogs</th>
 					<th>&nbsp</th>
 				</thead>
 
