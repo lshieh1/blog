@@ -64,9 +64,14 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::find($id);
-        return view::make('blogs.show')
-            ->with('blog', $blog);
+        $singleBlog = Blog::find($id);
+        return view('blog', [
+            'singleBlog'=> $singleBlog
+        ]);        
+
+        // $blog = Blog::find($id);
+        // return view::make('blog.show')
+        //     ->with('blog', $blog);
     }
 
     /**
@@ -77,7 +82,10 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('editblog', [
+            'blog' => $blog
+        ]);
     }
 
     /**
@@ -89,7 +97,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Blog::where('id', $id)->update($request->all());
+        return redirect('/blogs/$id');
     }
 
     /**
