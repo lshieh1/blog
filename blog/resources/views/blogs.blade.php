@@ -50,13 +50,15 @@
 								<td class="table-text">
 									<div>{{ $blog->name }}</div>
 								</td>
-
+								<td>
+									<a href="/blogs/{{$blog->id}}"><button class="btn btn-success">Click to see post</button></a>
+								</td>
 								<td>
 									<!-- delete button -->
 									<form action="/blogs/{{$blog->id}}" method="POST">
 										{{csrf_field()}}
 										{{method_field('DELETE')}}
-										<button>Delete Blog</button>
+										<button class="btn btn-danger">Delete Blog</button>
 									</form>
 								</td>
 							</tr>

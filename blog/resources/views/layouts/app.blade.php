@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 		<nav class="navbar navbar-default">
-			<a class="nav-link item" href="#">dummy link</a>
+			<a class="nav-link item" href="/blogs">Home</a>
 		</nav>
 
 		@yield('content')

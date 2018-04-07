@@ -81,7 +81,8 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+                    <small>By: <strong><font color="green"><i>Lillian</i></font>, <font color="blue"><i>Ryan</i></font>, and <font color="red"><i>Tom</i></font></strong></small>
+                    <br><br>
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
