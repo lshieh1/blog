@@ -44,7 +44,7 @@ class BlogController extends Controller
          ]);
 
          if ($validator->fails()) {
-             return redirect('/')
+             return redirect('/blogs')
                  ->withInput()
                  ->withErrors($validator);
          }
@@ -97,8 +97,30 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Blog::where('id', $id)->update($request->all());
-        return redirect('/blogs/$id');
+         // $validator = Validator::make($request->all(), [
+         //     'name' => 'required|max:255',
+         // ]);
+
+         // if ($validator->fails()) {
+         //     return redirect('/blogs')
+         //         ->withInput()
+         //         ->withErrors($validator);
+         // }
+
+         // $blog = Blog::findOrFail($id);
+         // $blog->name = $request->name;
+         // $blog->update();
+
+         // return redirect('/blogs/$id');
+        // Blog::findOrFail($id)->update($request->except('_token'));
+        // return redirect('/blogs/$id');
+        $blog = Blog::findOrFail($id);
+
+        $blog->name = $request->name;
+
+        $blog->save();
+
+        return redirect("/blogs/$id");
     }
 
     /**
