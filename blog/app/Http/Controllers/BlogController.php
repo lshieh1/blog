@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\Comment;
 use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
@@ -65,9 +66,11 @@ class BlogController extends Controller
     public function show($id)
     {
         $singleBlog = Blog::find($id);
+        $comments = Comment::orderBy('created_at', 'asc')->get();
         return view('blog', [
-            'singleBlog'=> $singleBlog
-        ]);        
+            'singleBlog'=> $singleBlog,
+            'comments' => $comments
+        ]);
 
         // $blog = Blog::find($id);
         // return view::make('blog.show')
@@ -135,4 +138,19 @@ class BlogController extends Controller
 
          return redirect('/blogs');
     }
+    public function createComment(Request $request, $id)
+    {
+        $comment = new Comment;
+        $comment->body = $request->body;
+        $comment->post_id = $request->post_id;
+        $comment->save();
+        return redirect("/blogs/$id");
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 }
