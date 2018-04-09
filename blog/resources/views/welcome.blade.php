@@ -79,8 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <h4>Laravel</h4>
                 </div>
+                    <p>Small Project</p>
                     <small>By: <strong><font color="green"><i>Lillian</i></font>, <font color="blue"><i>Ryan</i></font>, and <font color="red"><i>Tom</i></font></strong></small>
                     <br><br>
                 <div class="links">
@@ -89,6 +90,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/blogs">Blogs</a>
                 </div>
             </div>
         </div>
