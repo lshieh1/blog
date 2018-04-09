@@ -66,7 +66,7 @@ class BlogController extends Controller
     public function show($id)
     {
         $singleBlog = Blog::find($id);
-        $comments = Comment::orderBy('created_at', 'asc')->get();
+        $comments = Comment::where('post_id', $id)->get();
         return view('blog', [
             'singleBlog'=> $singleBlog,
             'comments' => $comments

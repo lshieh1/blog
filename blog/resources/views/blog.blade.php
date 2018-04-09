@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
-	<h1>this is the single blog page</h1>
+ <div class="jumbotron">
+	<h1><span class="badge badge-pill badge-info">Blog</span></h1>
+	<hr>
 	<p>{{$singleBlog->name}}</p>
+	<br><br>
 	<a href="/blogs/{{$singleBlog->id}}/edit"><button class="btn btn-secondary">Edit this post</button></a>
 	<br><br>
 
@@ -20,5 +22,6 @@
 		<input type="text" name="body">
 		<input type="submit" value="leave a comment">
 	</form>
+</div>	
 
 @endsection	
